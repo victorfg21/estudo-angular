@@ -3,22 +3,25 @@ import { Frase } from '../shared/frase.model';
 import { FRASES } from './frases-mock';
 
 @Component({
-  selector: 'app-painel',
-  templateUrl: './painel.component.html',
-  styleUrls: ['./painel.component.css']
+    selector: 'app-painel',
+    templateUrl: './painel.component.html',
+    styleUrls: ['./painel.component.css']
 })
 export class PainelComponent implements OnInit {
-  public frases: Frase[] = FRASES;
-  public instrucao: string = 'Traduza a frase:';
-  public resposta: string;
+    public frases: Frase[] = FRASES;
+    public instrucao: string = 'Traduza a frase:';
+    public resposta: string;
 
-  constructor() { console.log(this.frases) }
+    constructor() { console.log(this.frases) }
 
-  ngOnInit() {
-  }
+    ngOnInit() {
+    }
 
-  public atualizaResposta(resposta: Event): void
-  {
-    this.resposta = (<HTMLInputElement>resposta.target).value;
-  }
+    public atualizaResposta(resposta: Event): void {
+        this.resposta = (<HTMLInputElement>resposta.target).value;
+    }
+
+    public verificarResposta(): void {
+        console.log('Verificar reposta: ', this.resposta);
+    }
 }
